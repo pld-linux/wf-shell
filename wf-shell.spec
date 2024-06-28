@@ -1,11 +1,11 @@
 Summary:	A GTK3-based panel for wayfire
 Name:		wf-shell
-Version:	0.8.0
+Version:	0.8.1
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/WayfireWM/wf-shell/releases/download/v%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	93e11f418814743e7212ee1d1dd08f87
+# Source0-md5:	cb356910ade074905b512588e75f0a34
 URL:		https://wayfire.org/
 BuildRequires:	alsa-lib-devel
 BuildRequires:	glib2-devel
@@ -24,6 +24,8 @@ BuildRequires:	wayland-devel
 BuildRequires:	wayland-protocols
 BuildRequires:	wf-config-devel >= 0.8.0
 BuildRequires:	xz
+Requires(post,postun):	gtk-update-icon-cache
+Requires:	hicolor-icon-theme
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -51,6 +53,12 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+%update_icon_cache hicolor
+
+%postun
+%update_icon_cache hicolor
+
 %files
 %defattr(644,root,root,755)
 %doc LICENSE README.md wf-shell.ini.example
@@ -58,6 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/wf-background
 %attr(755,root,root) %{_bindir}/wf-dock
 %attr(755,root,root) %{_bindir}/wf-panel
+%{_iconsdir}/hicolor/*x*/apps/wayfire.png
+%{_iconsdir}/hicolor/scalable/apps/wayfire.svg
 %{_datadir}/wayfire/icons/wayfire.png
 %{_datadir}/wayfire/metadata/wf-shell
 %{_datadir}/wayfire/wallpaper.jpg
