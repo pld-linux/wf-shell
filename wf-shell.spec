@@ -25,7 +25,11 @@ BuildRequires:	wayland-protocols
 BuildRequires:	wf-config-devel >= 0.8.0
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
+Requires:	gtk-layer-shell >= 0.6
+Requires:	gtkmm3 >= 3.24
 Requires:	hicolor-icon-theme
+Requires:	pulseaudio-libs >= 2.0
+Requires:	wf-config >= 0.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
