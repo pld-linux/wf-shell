@@ -1,11 +1,11 @@
 Summary:	A GTK3-based panel for wayfire
 Name:		wf-shell
-Version:	0.9.0
+Version:	0.10.0
 Release:	1
 License:	MIT
 Group:		Applications
 Source0:	https://github.com/WayfireWM/wf-shell/releases/download/v%{version}/%{name}-%{version}.tar.xz
-# Source0-md5:	eacfc9c080e1f4a37e95903f8e8cbbee
+# Source0-md5:	7354ecb42b6c511656d1314b1a0e8b81
 URL:		https://wayfire.org/
 BuildRequires:	alsa-lib-devel
 BuildRequires:	glib2-devel
