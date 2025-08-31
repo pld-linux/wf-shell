@@ -17,7 +17,7 @@ BuildRequires:	meson >= 0.51.0
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	pulseaudio-devel >= 2.0
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	wayfire-devel
 BuildRequires:	wayland-devel
